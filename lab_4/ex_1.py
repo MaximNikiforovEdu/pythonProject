@@ -11,6 +11,8 @@ def sort_viborom(arr):
     return sorting_steps
 
 
+
+
 array = input().split(' ')
 arr = [int(i) for i in array]
 sorting_steps = sort_viborom(arr)
