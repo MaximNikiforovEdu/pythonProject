@@ -11,9 +11,9 @@ def sort_vstavkami(arr):
         sorting_steps.append(list(arr))
     return sorting_steps
 
-
-array = input().split(' ')
-arr = [int(i) for i in array]
-sorting_steps = sort_vstavkami(arr)
-for steps in sorting_steps:
-    print(' '.join(str(i) for i in steps))
+if __name__ == '__main__':
+    array = input().split(' ')
+    arr = [int(i) for i in array]
+    sorting_steps = sort_vstavkami(arr)
+    for steps in sorting_steps:
+        print(' '.join(str(i) for i in steps))

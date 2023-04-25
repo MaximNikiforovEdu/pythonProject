@@ -12,7 +12,7 @@ def sort_viborom(arr):
 
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     array = input().split(' ')
     arr = [int(i) for i in array]
     sorting_steps = sort_viborom(arr)

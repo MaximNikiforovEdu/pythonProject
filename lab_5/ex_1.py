@@ -53,7 +53,8 @@ def FrequentWordsWithSorting(text, k):
 
 # читаем text как текст и k как число с клавиатуры
 # вызываем FrequentWordsWithSorting, результат преобразуем к нужному виду и выводим
-text = input()
-k = int(input())
-print(' '.join(str(i) for i in FrequentWordsWithSorting(text, k)[0]))
-print(' '.join(FrequentWordsWithSorting(text, k)[1]))
+if __name__ == '__main__':
+    text = input()
+    k = int(input())
+    print(' '.join(str(i) for i in FrequentWordsWithSorting(text, k)[0]))
+    print(' '.join(FrequentWordsWithSorting(text, k)[1]))

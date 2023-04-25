@@ -16,7 +16,8 @@ def sort_podschet(arr, n):
         b[r[arr2[i]]] = arr[i]
     return b
 
-n = int(input())
-arr = input().split(' ')
-arr = [int(i) for i in arr]
-print(' '.join(str(i) for i in sort_podschet(arr, n)))
+if __name__ == '__main__':
+    n = int(input())
+    arr = input().split(' ')
+    arr = [int(i) for i in arr]
+    print(' '.join(str(i) for i in sort_podschet(arr, n)))

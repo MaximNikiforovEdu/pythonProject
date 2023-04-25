@@ -31,8 +31,9 @@ def sort_cifro(arr):
     return rez
 
 
-arr = input().split(' ')
-arr = [int(i) for i in arr]
-sorting_steps = sort_cifro(arr)
-for steps in sorting_steps:
-    print(' '.join(str(i) for i in steps))
+if __name__ == '__main__':
+    arr = input().split(' ')
+    arr = [int(i) for i in arr]
+    sorting_steps = sort_cifro(arr)
+    for steps in sorting_steps:
+        print(' '.join(str(i) for i in steps))

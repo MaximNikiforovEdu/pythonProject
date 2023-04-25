@@ -1,25 +1,6 @@
 from functools import reduce
 
-ACGTtoInt = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
-IntToACGT = {0: 'A', 1: 'C', 2: 'G', 3: 'T'}
-
-
-def Number2Pattern(index, k):
-    if k == 1:
-        return IntToACGT[index]
-    q = index // 4
-    r = index % 4
-    return Number2Pattern(q, k - 1) + IntToACGT[r]
-
-
-def PatternToNumber(dna):
-    if len(dna) == 0:
-        return 0
-
-    char = dna[-1]
-    dna = dna[:-1]
-
-    return PatternToNumber(dna) * 4 + ACGTtoInt[char]
+from lab_5.ex_1 import Number2Pattern, PatternToNumber
 
 
 def HammingDistance(s1, s2):
@@ -52,7 +33,8 @@ def Neighbours(Pattern, d):
 
 # читаем text как текст и k как число с клавиатуры
 # вызываем Neighbours, результат преобразуем к нужному виду и выводим
-text = input()
-k = int(input())
-print('\n'.join(
-    map(lambda x: Number2Pattern(x, len(text)), sorted(map(lambda x: PatternToNumber(x), Neighbours(text, k))))))
+if __name__ == '__main__':
+    text = input()
+    k = int(input())
+    print('\n'.join(
+        map(lambda x: Number2Pattern(x, len(text)), sorted(map(lambda x: PatternToNumber(x), Neighbours(text, k))))))

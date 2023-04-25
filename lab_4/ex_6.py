@@ -12,10 +12,10 @@ def sort_shella(arr, h):
         sorting_steps.append(list(arr))
     return sorting_steps
 
-h = input().split(' ')
-h = [int(i) for i in h]
-arr = input().split(' ')
-arr = [int(i) for i in arr]
-sorting_steps = sort_shella(arr, h)
-for steps in sorting_steps:
-    print(' '.join(str(i) for i in steps))
+if __name__ == '__main__':
+    h = [int(i) for i in input().split(' ')]
+    arr = input().split(' ')
+    arr = [int(i) for i in arr]
+    sorting_steps = sort_shella(arr, h)
+    for steps in sorting_steps:
+        print(' '.join(str(i) for i in steps))

@@ -10,6 +10,7 @@ def sort_podschet(arr):
             rez.append(str(i))
     return rez
 
-arr = input().split(' ')
-arr = [int(i) for i in arr]
-print(' '.join(sort_podschet(arr)))
+if __name__ == '__main__':
+    arr = input().split(' ')
+    arr = [int(i) for i in arr]
+    print(' '.join(sort_podschet(arr)))

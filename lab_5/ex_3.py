@@ -1,29 +1,7 @@
 from functools import reduce
 
-ACGTtoInt = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
-IntToACGT = {0: 'A', 1: 'C', 2: 'G', 3: 'T'}
-
-
-def Number2Pattern(index, k):
-    if k == 1:
-        return IntToACGT[index]
-    q = index // 4
-    r = index % 4
-    return Number2Pattern(q, k - 1) + IntToACGT[r]
-
-
-def PatternToNumber(dna):
-    if len(dna) == 0:
-        return 0
-
-    char = dna[-1]
-    dna = dna[:-1]
-
-    return PatternToNumber(dna) * 4 + ACGTtoInt[char]
-
-
-def HammingDistance(s1, s2):
-    return reduce(lambda x, y: x + (1 if y[0] != y[1] else 0), zip(s1, s2), 0)
+from lab_5.ex_1 import PatternToNumber, Number2Pattern
+from lab_5.ex_2 import HammingDistance
 
 
 def Neighbours(Pattern, d):
@@ -75,7 +53,7 @@ def FrequentWordsWithMismatches(text, k, d):
     # нужно ли нам сортировать FrequentPatterns перед тем, как вернуть?
     return FrequentPatterns
 
-
-text = input()
-kd = input()
-print(' '.join(FrequentWordsWithMismatches(text, int(kd.split(' ')[0]), int(kd.split(' ')[1]))))
+if __name__ == '__main__':
+    text = input()
+    kd = input()
+    print(' '.join(FrequentWordsWithMismatches(text, int(kd.split(' ')[0]), int(kd.split(' ')[1]))))
