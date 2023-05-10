@@ -28,13 +28,14 @@ def merge(A, left, mid, right):
     return indexes
 
 # читаем массив A, массив B, склеиваем их
-array = input().split(' ')
-A = [int(i) for i in array]
-array = input().split(' ')
-B = [int(i) for i in array]
-mid = len(A) - 1
-A.extend(B)
-# вызываем merge, результат преобразуем к нужному виду и выводим
-merge_arr = merge(A, 0, mid, len(A) - 1)
-print(' '.join(str(i) for i in A))
-print(' '.join(str(i) for i in merge_arr))
+if __name__ == '__main__':
+    array = input().split(' ')
+    A = [int(i) for i in array]
+    array = input().split(' ')
+    B = [int(i) for i in array]
+    mid = len(A) - 1
+    A.extend(B)
+    # вызываем merge, результат преобразуем к нужному виду и выводим
+    merge_arr = merge(A, 0, mid, len(A) - 1)
+    print(' '.join(str(i) for i in A))
+    print(' '.join(str(i) for i in merge_arr))
